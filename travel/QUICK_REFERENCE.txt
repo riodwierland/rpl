@@ -1,0 +1,54 @@
+# Quick Reference: Membuat Akun Admin/Karyawan
+
+## 🎯 Cara Cepat
+
+### 1. Login sebagai Admin
+```
+URL: http://localhost/travel/auth/login.php
+Username: admin
+Password: admin123
+```
+
+### 2. Klik Menu "Daftar User Baru" di Sidebar Dashboard
+
+### 3. Isi Form:
+```
+Username:         budi.karyawan (minimal 3 karakter)
+Password:         ••••••  (minimal 6 karakter)
+Confirm Password: ••••••  (harus sama)
+Level Akses:      Karyawan / Manajer / Admin
+```
+
+### 4. Klik Tombol "Buat User"
+
+### 5. User Baru Bisa Login
+```
+Username: budi.karyawan
+Password: [password yang diset]
+```
+
+---
+
+## 📌 Perbedaan Pelanggan vs Admin/Karyawan
+
+| Aspek | Pelanggan | Admin/Karyawan |
+|-------|-----------|----------------|
+| **Registrasi** | Self-register (form publik) | Admin yang membuat |
+| **URL** | `/auth/register.php` | `/admin/register_user.php` |
+| **Data** | Email + Password | Username + Password |
+| **Tabel DB** | `pelanggan` | `pengguna` |
+| **Login Input** | Email | Username |
+| **Fungsi** | Booking wisata | Kelola sistem |
+
+---
+
+## 🔐 Akses Hanya Admin
+- Hanya user dengan `level_akses = admin` atau `superadmin` yang bisa akses halaman ini
+- Karyawan dan Manajer tidak bisa membuat user baru
+
+---
+
+## 📂 File Utama
+- **Register User:** `admin/register_user.php`
+- **Login:** `auth/login.php`
+- **Setup DB:** `setup.php`
